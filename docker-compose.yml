@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  live-cam-front:
+    container_name: live-cam-front
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/home/app/frontend
+    tty: true
+    ports:
+      - "3000:3000"
+    environment:
+    - CHOKIDAR_USEPOLLING=true
+    # command: yarn dev
