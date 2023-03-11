@@ -35,7 +35,8 @@ const SMain = styled.div`
 
 const SSideMenu = styled.div`
   flex: 1;
-  div{
+  max-width: 300px;
+  div{ 
     position: sticky;
     top: 90px;
     left: 30px;
