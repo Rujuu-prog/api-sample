@@ -12,35 +12,17 @@ export const NavigationProvider = ({
 }) => {
   return(
     <SContainer>
-      <SSideMenu>
-        <SideList />
-      </SSideMenu>
-      <SMain>
-        <XStack $sm={{ flexDirection: 'column' }} px="$4" space>
-          {children}
-        </XStack>
-      </SMain>
+      <XStack $sm={{ flexDirection: 'column' }} px="$4" space>
+        {children}
+      </XStack>
     </SContainer>
   )
 }
 
 const SContainer = styled.div`
   display: flex;
+  justify-content: center;
   height: 100vh;
-`;
-
-const SMain = styled.div`
-  flex: 2;
-`;
-
-const SSideMenu = styled.div`
-  flex: 1;
-  max-width: 300px;
-  div{ 
-    position: sticky;
-    top: 90px;
-    left: 30px;
-  }
 `;
 
 
