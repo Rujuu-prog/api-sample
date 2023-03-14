@@ -1,7 +1,7 @@
 version: "3.8"
 services:
-  live-cam-front:
-    container_name: live-cam-front
+  api-sample-front:
+    container_name: api-sample-front
     build:
       context: .
       dockerfile: Dockerfile
