@@ -1,10 +1,11 @@
-import { Anchor, Button, H1, Input, Paragraph, Separator, Sheet, XStack, YStack, Card, Image, H2, CardProps } from '@my/ui'
+import { Anchor, Button, H1, H4, Input, Paragraph, Separator, Sheet, XStack, YStack, Card, Image, H2, CardProps, Text } from '@my/ui'
 import { ChevronDown, ChevronUp } from '@tamagui/lucide-icons';
 import { CardCustom } from 'app/components/CardCustom';
 import React, { useState } from 'react';
 import { useLink } from 'solito/link';
 import useSWR, { mutate } from 'swr';
 import axios from "axios";
+import { H3 } from '@my/ui/src';
 
 interface Data {
   data: {file: string};
@@ -18,11 +19,22 @@ export function RandomCatScreen() {
       console.log('called');
     }
     return (
-      <YStack $sm={{ flexDirection: 'column' }} px="$4" space>
-        <H1>random cat api</H1>
-        {data?<Image src={data.data.file} width={200} height={300} />:<div style={{width:"200px", height:"300px"}}><p>読み込み中</p></div>}
-        <Button onPress={()=>(getCatImg())}>Change Image</Button>
-        <Anchor href='https://github.com/Rujuu-prog/api-sample/blob/main/packages/app/features/random-cat/screen.tsx' target="_blank" rel="noopener noreferrer">View source</Anchor>
-      </YStack>
+      <XStack px="$4" space="$12" >
+        <YStack $sm={{ flexDirection: 'column' }} px="$4" space>
+          <H1>Random Cat API</H1>
+          {data?<Image src={data.data.file} width={200} height={300} />:<div style={{width:"200px", height:"300px"}}><p>読み込み中</p></div>}
+          <Button onPress={()=>(getCatImg())}>Change Image</Button>
+          <Anchor href='https://github.com/Rujuu-prog/api-sample/blob/main/packages/app/features/random-cat/screen.tsx' target="_blank" rel="noopener noreferrer">View source</Anchor>
+        </YStack>
+        <YStack px="$4" py="$5" space>
+          <H3>API info</H3>
+          <Text>🌏 <Anchor href='https://aws.random.cat/' target="_blank" rel="noopener noreferrer">Official Site</Anchor></Text>
+          <Text>📡 <Anchor href='https://aws.random.cat/meow' target="_blank" rel="noopener noreferrer">End Point</Anchor></Text>
+          <H3>Summary</H3>
+          <Text>かわいい猫ちゃんの画像を、ランダムに返してくれるAPIです。</Text>
+          <H3>Comment</H3>
+          <Text>ただただかわいい😸<br/>404のページとかで使いたい。</Text>
+        </YStack>
+      </XStack>
     )
   }
