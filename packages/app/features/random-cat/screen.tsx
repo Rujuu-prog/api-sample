@@ -20,7 +20,7 @@ export function RandomCatScreen() {
     return (
       <YStack $sm={{ flexDirection: 'column' }} px="$4" space>
         <H1>random cat api</H1>
-        {data&&<Image src={data.data.file} width={200} height={300} />}
+        {data?<Image src={data.data.file} width={200} height={300} />:<div style={{width:"200px", height:"300px"}}><p>読み込み中</p></div>}
         <Button onPress={()=>(getCatImg())}>Change Image</Button>
         <Anchor href='https://github.com/Rujuu-prog/api-sample/blob/main/packages/app/features/random-cat/screen.tsx' target="_blank" rel="noopener noreferrer">View source</Anchor>
       </YStack>
