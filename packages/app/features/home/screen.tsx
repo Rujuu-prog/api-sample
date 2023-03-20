@@ -13,7 +13,10 @@ export function HomeScreen() {
   })
 
   return (
-    <CardCustom title="ランダムで猫の画像を表示するAPI" subTitle="Random Cat image API" url='/random-cat' />
+    <>
+      <CardCustom title="ランダムで猫の画像を表示するAPI" subTitle="Random Cat image API" url='/random-cat' />
+      <CardCustom title="ランダムでトリビアを返すAPI" subTitle="Random Trivia API" url='/trivia' />
+    </>
   )
 }
 
